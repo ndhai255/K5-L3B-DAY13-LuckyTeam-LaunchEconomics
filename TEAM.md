@@ -5,7 +5,7 @@
 - Tên nhóm: LuckyTeam
 - Lớp: L3B
 - Repo nhóm: `K5-L3B-DAY13-LuckyTeam-LaunchEconomics` (xem [SUBMISSION.md](SUBMISSION.md))
-- URL repo, nhánh nộp, commit chốt: `https://github.com/ndhai255/K5-L3B-DAY13-LuckyTeam-LaunchEconomics` · nhánh `main` · commit chốt: [Điền trước khi nộp]
+- URL repo, nhánh nộp, commit chốt: `https://github.com/ndhai255/K5-L3B-DAY13-LuckyTeam-LaunchEconomics` · nhánh `main` · commit chốt: commit cuối trên `main` trước deadline (code và hồ sơ chốt tại `6fa1222`; các commit sau chỉ cập nhật phiếu chấm, báo cáo nhóm và báo cáo cá nhân)
 
 ## Thành viên
 

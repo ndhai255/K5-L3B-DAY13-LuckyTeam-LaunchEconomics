@@ -32,7 +32,7 @@ Nhóm phân công 4 thành viên làm song song theo [PHAN_CONG.md](../../PHAN_C
   - Chỉ số an toàn (tỉ lệ lỗi lọt đến khách — mở lại 7 ngày): **4,25%** (51/1.200); trong phạm vi pilot: **3,97%** (39/982).
 - **Bảng lỗi và pilot plan (C–D):** Hai bộ nhãn độc lập trùng **18/20 = 90%**; ca 12 thống nhất **Ngầm**, ca 13 **Giới hạn hệ thống**, kèm bảng khắc phục đủ năm loại. Pilot chỉ gồm `noi_dia` + `hang_nang`, random theo staff 20 can thiệp/20 đối chứng; chấp nhận MDE 6 điểm, cần **5.980** yêu cầu thô tương đương **859** mẫu hiệu dụng mỗi nhánh (DE 6,96). **Con số bất lợi:** nếu tác động thật chỉ 5 điểm thì power chỉ còn **0,64**. Rollout 10% → 25% → 50%, quyết định đề xuất T+37, có bốn luật dừng (hoàn trùng, mở lại 7 ngày, CPS > 8.000 đ, bỏ qua gợi ý > 40%) và rollback. `python lab13.py` in đủ A, B, D1 và E1.
 - **Đề xuất Gate 2a:** **Go có điều kiện** cho pilot `noi_dia` + `hang_nang` (chi tiết 4 điều kiện, người phụ trách và ngày kiểm tra tại [ho_so_launch_v0.md](ho_so_launch_v0.md)).
-- **Kết quả duyệt chéo hội đồng:** [Điền sau phiên duyệt chéo Gate 2a].
+- **Duyệt chéo hội đồng:** lớp L3B lẻ nhóm nên không có nhóm hội đồng chấm chéo. Nhóm **tự rà soát** theo rubric Gate 2a: **30/30**, **Go có điều kiện** (chi tiết tại [phieu_cham.md](phieu_cham.md); đây không phải điểm của nhóm khác). Đạt đủ 10/10 ở cả 3 tiêu chí: đề xuất khớp bằng chứng và nêu rõ con số bất lợi (B4 lên 1,03×, power 0,64 ở 5 điểm), mọi số giả lập đều có nhãn `simulated`, và pilot tách được tác động theo staff 20 + 20 với 4 luật dừng định lượng.
 
 ## 5. Khó khăn và cách xử lý
 

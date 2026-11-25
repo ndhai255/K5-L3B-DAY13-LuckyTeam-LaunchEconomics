@@ -57,4 +57,4 @@
   - Chi phí thật của trợ lý nằm ở giờ nhân viên (92,5% tổng chi phí), không phải ở token. Chỉ nhìn hoá đơn token là đánh giá thấp chi phí 16 lần.
   - Chạy lại chỉ có ích khi lỗi là ngẫu nhiên. Với `quoc_te`, lỗi lặp lại trên cùng yêu cầu nên chạy lại chỉ tốn thêm tiền; nên loại khỏi phạm vi pilot.
   - So với 12.000 đ phải dùng chi phí cả hệ thống (0,49×), không dùng 4.472 đ (0,37×), vì 4.472 đ chưa tính phần nhân viên làm thay.
-- **Cần cải thiện:** ...
+- **Cần cải thiện:** thống nhất sớm hơn quy ước đọc CSV (`keep_default_na=False`) và giao diện hàm giữa các module để ghép nhánh `p1-A` → `p4-E` vào `src/lab13.py` kịp mốc 17:00 trước phiên duyệt chéo Gate 2a.
