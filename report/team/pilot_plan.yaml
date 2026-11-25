@@ -16,7 +16,12 @@
 #   4. Khóa chỉ số, ngưỡng, stop rule, seed và mốc T+37 trước ngày bắt đầu.
 #   5. Có đúng 20 cụm staff mỗi nhánh.
 #
+# Đánh đổi đã chấp nhận: chia theo staff 20 + 20 không đạt MDE 5 điểm (tối đa 1.000 < 1.251 hiệu dụng),
+#   nên chấp nhận MDE 6 điểm. Nếu tác động thật chỉ là 5 điểm thì power chỉ còn 0,64 với n = 859
+#   (statsmodels NormalIndPower, in bởi lab13.py). Giám đốc vận hành ký chấp nhận trước ngày bắt đầu.
+#
 # Baseline mở lại: toàn mẫu 51/1.200 = 4,25%; scope noi_dia + hang_nang 39/982 = 3,97%.
+# Baseline bỏ qua gợi ý (sua + bo / được xem lại): toàn mẫu 48/177 = 27,12%; scope 27/128 = 21,09%.
 # Giới hạn event hiện tại: refund_ledger_write chỉ có request_id, idempotency_key,
 # so_tien_hoan, ket_qua, trace_id; chưa có khóa đơn nghiệp vụ chung để phát hiện
 # hai request_id khác nhau cho cùng một đơn. Đây là điều kiện phải bổ sung trước pilot.
@@ -46,6 +51,7 @@ pilot:
     - "NẾU refund_ledger_write có từ 2 kết quả ket_qua=ok với idempotency_key khác nhau cho cùng request_id TRONG bất kỳ lần đối soát thời gian thực nào THÌ Giám đốc vận hành hoàn tất tắt trợ lý và chuyển ca mới sang nhân viên trong 30 phút, đồng thời Kỹ sư trưởng agent đối soát sổ cái KHÔNG THÌ giữ trạng thái rollout hiện tại; chỉ mở rộng khi các luật dừng khác đạt."
     - "NẾU tỷ lệ mở lại 7 ngày của arm trợ lý cao hơn đối chứng từ 2 điểm phần trăm hoặc vượt 6 phần trăm TRONG một lần kiểm tra có dữ liệu theo dõi đủ 7 ngày THÌ Giám đốc vận hành dừng mở rộng và chuyển ca mới sang luồng nhân viên KHÔNG THÌ chỉ chuyển bước sau khi cửa sổ kiểm tra hoàn tất, không có vi phạm hoàn trùng chưa xử lý và mọi luật dừng đạt."
     - "NẾU CPS đo thực tế của toàn bộ noi_dia + hang_nang trong arm trợ lý, với tử số là token, tool, xem lại và làm lại thực tế của mọi attempt và mẫu số là số yêu cầu thành công, vượt 8000 đ TRONG 2 tuần đầy đủ liên tiếp ở bước 0.50 THÌ PM trợ lý hoàn phí đóng băng scope gốc, thu hẹp ca mới về noi_dia và giữ đối chứng đồng thời KHÔNG THÌ chỉ ra quyết định mở rộng scope gốc sau đủ hai tuần ở bước 0.50 và các luật khác đạt."
+    - "NẾU tỉ lệ bỏ qua gợi ý (staff_review_decision có quyet_dinh là sua hoặc bo, chia số yêu cầu được xem lại) của arm trợ lý vượt 40%, gần gấp đôi mức 21,09% của scope trong đợt chạy thử, TRONG 1 tuần đầy đủ của bất kỳ bước rollout nào THÌ Trưởng nhóm CSKH phỏng vấn 5 nhân viên arm trợ lý và rà 20 trace bị bỏ qua gần nhất trong 3 ngày làm việc, báo nguyên nhân cho PM trợ lý hoàn phí KHÔNG THÌ không được chuyển sang bước rollout tiếp theo."
   interim_looks: "Cuối T+7 và T+14 chỉ rà soát an toàn/vận hành trên dữ liệu đã đủ theo dõi; không kết luận hiệu quả sớm. Chuyển bước chỉ khi không có stop rule vi phạm; chỉ số chính của cohort cuối chờ đủ 7 ngày mở lại."
   rollback: "Ba mươi phút là hạn hoàn tất thao tác tắt, không phải thời gian tự bật lại. Khách mới đi theo luồng nhân viên. Chỉ Giám đốc vận hành được bật lại sau khi Kỹ sư trưởng agent khắc phục nguyên nhân gốc, đối soát refund_ledger_write không còn hoàn trùng hoặc sai lệch liên quan, và có phê duyệt bằng văn bản. Trước pilot, Kỹ sư trưởng agent phải bổ sung khóa đơn nghiệp vụ chung, ví dụ order_id hoặc refund_target_id, vào sự kiện tạo yêu cầu và ghi sổ cái để phát hiện hoàn trùng khi request_id khác nhau; schema CP5 hiện tại chưa làm được việc này."
   decision_date: "ĐỀ XUẤT CHỜ DUYỆT: T+1 là ngày vận hành đầu tiên. T+1 đến T+7 rollout 0.10; T+8 đến T+14 rollout 0.25; T+15 đến T+28 rollout 0.50 trong 2 tuần CPS; ca cuối được phép đóng đến T+29 và theo dõi mở lại đủ 7 ngày đến hết T+36; quyết định sớm nhất T+37. Thay bằng ngày lịch khi chốt ngày bắt đầu."

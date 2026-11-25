@@ -147,11 +147,23 @@ if __name__ == '__main__':
     kiem_tra_a1_a2_doc_lap(runs, reqs, mo_hinh=mo_hinh)
     chay_do_nhay(mo_hinh, runs, reqs)
 
+    # Nhiệm vụ D (Người 3): cỡ mẫu D1 và tỉ lệ mở lại hiện tại trước khi đặt luật an toàn.
+    from cp4_co_mau import d1_ket_qua, in_bao_cao_d1, ty_le_mo_lai
+    from statsmodels.stats.proportion import proportion_effectsize
+    from statsmodels.stats.power import NormalIndPower
+    print('\n=== Nhiệm vụ D · Cỡ mẫu pilot ===')
+    d1 = d1_ket_qua()
+    in_bao_cao_d1(d1)
+    # Con số bất lợi của đánh đổi MDE 6 điểm: power nếu tác động thật chỉ là 5 điểm.
+    power_5_diem = NormalIndPower().power(proportion_effectsize(0.75, 0.70),
+                                          nobs1=d1['e_n_per_arm'], alpha=0.05)
+    print(f"Power nếu tác động thật chỉ 5 điểm (n hiệu dụng={d1['e_n_per_arm']}/nhóm): {power_5_diem:.2f}")
+    print('Tỉ lệ mo_lai_trong_7_ngay hiện tại:')
+    for ten, loai in [('Toàn bộ mẫu', None), ('noi_dia + hang_nang', tuple(PHAM_VI_PILOT))]:
+        r = ty_le_mo_lai('logix_requests.csv', loai)
+        print(f"  {ten:20s} {r['numerator']}/{r['denominator']} = {r['rate']:.2%}")
+
     # Nhiệm vụ E1 (Người 4): ba chỉ số chính, dùng, an toàn.
     from cp5_chi_so import chay_chi_so
     print()
     chay_chi_so(reqs)
-
-    # TODO CP4 · Nhiệm vụ D: cỡ mẫu (chờ nhánh p3-CD, module cp4_co_mau).
-    #   from statsmodels.stats.proportion import proportion_effectsize
-    #   from statsmodels.stats.power import NormalIndPower
