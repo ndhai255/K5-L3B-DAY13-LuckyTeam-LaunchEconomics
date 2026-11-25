@@ -4,7 +4,7 @@
 
 - Họ tên: Tăng Nguyễn Hải Đăng
 - MSSV: 2A202603916
-- Email: 26ai.dangtnh@vinuni.edu.vn
+- Email: haidangg.work@gmail.com
 - GitHub: haidangwork1411
 - Vai trong nhóm: Người gắn nhãn 1, viết code sau giải lao; phụ trách CP3 và CP4.
 
