@@ -2,15 +2,14 @@
 
 Nhóm số n chấm nhóm số n + 1; nhóm cuối chấm nhóm 1. Chấm theo bằng chứng trong hồ sơ, không theo cách trình bày: một đề xuất No-go có lý do bằng số được điểm cao hơn một đề xuất Go bỏ qua con số bất lợi.
 
-- Nhóm chấm (hội đồng): LuckyTeam
+- Nhóm chấm (hội đồng): MeatProxy (L3B)
 - Nhóm được chấm: LuckyTeam (L3B)
-- Ghi chú: lớp L3B lẻ nhóm nên không có nhóm hội đồng chấm chéo; đây là phiếu **tự rà soát** theo đúng rubric Gate 2a, không phải điểm của nhóm khác.
 
 | Tiêu chí | 0 điểm | 5 điểm | 10 điểm | Điểm | Lý do (có số) |
 | --- | --- | --- | --- | ---: | --- |
-| Đề xuất khớp bằng chứng | Mâu thuẫn với số của chính nhóm | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý | 10 | Đề xuất **Go có điều kiện** khớp bảng số: nêu rõ 2 con số bất lợi là B4 xem lại 100% lên **11.743–12.415 đ (0,98×–1,03×)** và power chỉ còn **0,64** nếu tác động thật 5 điểm; kèm 4 điều kiện có người phụ trách và ngày kiểm tra. |
-| Số giả lập và phạm vi | Không nhãn; phạm vi "mọi yêu cầu" | Có nhãn hoặc có thu hẹp phạm vi | Nhãn ở mọi số giả lập; phạm vi thu hẹp có lý do bằng số | 10 | Mọi số từ cột `_simulated` (4.472 đ, 5.865 đ, 6.901.220 đ, 11.743–12.415 đ, 4.599 đ, 5.784 đ) đều gắn nhãn `simulated`/`Giả lập`; phạm vi thu hẹp còn `noi_dia` (0,22×) + `hang_nang` (0,69×), loại `quoc_te` (1,88×, ok tụt 30,0% → 2,2%) và `doi_tac` (0,85×). |
-| Pilot ra được quyết định | Không đối chứng hoặc thiếu cỡ mẫu | Đủ cỡ mẫu, luật dừng chung chung | Tách được tác động, đủ mẫu, luật dừng có ngưỡng, thời hạn, người có quyền dừng | 10 | Chia ngẫu nhiên theo **staff 20 + 20** (phân tầng depot); đủ cỡ mẫu MDE 6 điểm (**859** hiệu dụng/nhóm, **5.980** yc thô, DE 6,96); 4 luật dừng đủ NẾU–TRONG–THÌ–KHÔNG THÌ có ngưỡng số, thời hạn (T+37) và vai phụ trách cụ thể. |
+| Đề xuất khớp bằng chứng | Mâu thuẫn với số của chính nhóm | Khớp nhưng bỏ qua một con số bất lợi | Khớp, nêu cả con số bất lợi và cách xử lý | 10 | Đề xuất **Go có điều kiện** khớp bảng số: nêu rõ 2 con số bất lợi là B4 xem lại 100% lên **11.743–12.415 đ (0,98×–1,03×)** và power chỉ còn **0,64** nếu tác động thật 5 điểm; kèm 4 điều kiện có người phụ trách và ngày kiểm tra (lưu ý của hội đồng: khoá chống trùng lệnh hoàn tiền chưa chạy kiểm thử thực tế trước pilot). |
+| Số giả lập và phạm vi | Không nhãn; phạm vi "mọi yêu cầu" | Có nhãn hoặc có thu hẹp phạm vi | Nhãn ở mọi số giả lập; phạm vi thu hẹp có lý do bằng số | 10 | Mọi số từ cột `_simulated` (4.472 đ, 5.865 đ, 6.901.220 đ, 11.743–12.415 đ, 4.599 đ, 5.784 đ) đều gắn nhãn `simulated`/`Giả lập`; phạm vi thu hẹp còn `noi_dia` (0,22×) + `hang_nang` (0,69×), loại `quoc_te` (1,88×, ok tụt 30,0% → 2,2%) và `doi_tac` (0,85×) (lưu ý của hội đồng: chi phí thực vẫn chờ đo lại sau tuần 1 pilot). |
+| Pilot ra được quyết định | Không đối chứng hoặc thiếu cỡ mẫu | Đủ cỡ mẫu, luật dừng chung chung | Tách được tác động, đủ mẫu, luật dừng có ngưỡng, thời hạn, người có quyền dừng | 10 | Chia ngẫu nhiên theo **staff 20 + 20** (phân tầng depot); đủ cỡ mẫu MDE 6 điểm (**859** hiệu dụng/nhóm, **5.980** yc thô, DE 6,96); 4 luật dừng đủ NẾU–TRONG–THÌ–KHÔNG THÌ có ngưỡng số, thời hạn (T+37) và vai phụ trách cụ thể (lưu ý của hội đồng: cần theo dõi thêm rủi ro tràn tác động trong cùng depot). |
 | **Tổng** | | | | **30 / 30** | |
 
 **Quyết định của hội đồng:** Go có điều kiện
