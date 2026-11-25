@@ -97,7 +97,7 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - File: `src/cp4_co_mau.py`, `report/team/pilot_plan.yaml`, `report/team/bang_loi.md`.
 - `cd src && python cp4_co_mau.py` in đủ D1 và baseline; `yaml.safe_load` đọc được `pilot_plan.yaml`.
 - Báo cáo cá nhân: [report/team/2A202603916_TangNguyenHaiDang.md](report/team/2A202603916_TangNguyenHaiDang.md).
-- Các file đang ở nhánh `p3-CD`, chờ merge và tích hợp CP4 vào `src/lab13.py`; không nêu commit khi chưa commit.
+- Nhánh `p3-CD`, commit `1fbd640` (đã merge vào `main` tại PR #2 `183a4ce` và tích hợp CP4 vào `src/lab13.py` tại `6fa1222`).
 
 ## VuQuangHai-2A202603935
 
@@ -109,13 +109,13 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 
 ### Đóng góp cụ thể
 
-- Gắn nhãn độc lập 20 ca lỗi theo 5 loại Google PAIR dựa trên nguyên nhân gốc để so đồng thuận với Người 3.
+- Gắn nhãn độc lập 20 ca lỗi theo 5 loại Google PAIR dựa trên nguyên nhân gốc; so nhãn với Người 3 đạt đồng thuận **18/20 = 90%** (ca 12 thống nhất Ngầm, ca 13 thống nhất Giới hạn hệ thống).
 - Viết module `src/cp5_chi_so.py` tính ba chỉ số E1 trên 1.200 yêu cầu (`82,83%`, `27,12%`, `4,25%`) và phạm vi pilot (`92,26%`, `21,09%`, `3,97%`).
 - Hoàn thiện phần E1, bảng 10 event có `trace_id` và kiểm tra chéo trong `report/team/chi_so.md`.
-- Dựng khung 7 mục và đề xuất nháp Go có điều kiện trong `report/team/ho_so_launch_v0.md`; dựng khung `TEAM.md` và `report/team/group_report.md`.
+- Dựng và cập nhật hồ sơ 7 mục trong `report/team/ho_so_launch_v0.md` (đủ số liệu A–E, đề xuất **Go có điều kiện** kèm 4 điều kiện có vai phụ trách và mốc kiểm tra), `TEAM.md` và `report/team/group_report.md`.
 
 ### Bằng chứng
 
-- Nhánh `haivq`, commit `ffdcd4e` (phần việc Người 4) và merge `ad5178f` vào `main`.
+- Nhánh `haivq`, commit `ffdcd4e` (phần việc Người 4), merge `ad5178f` vào `main`, và commit `90ed31d` (cập nhật số A/B/E2 vào hồ sơ & báo cáo cá nhân).
 - File: `src/cp5_chi_so.py`, `report/team/chi_so.md` (E1 & 10 event), `report/team/ho_so_launch_v0.md`, `TEAM.md`, `report/team/group_report.md`.
 - Báo cáo cá nhân: [report/team/2A202603935_VuQuangHai.md](report/team/2A202603935_VuQuangHai.md).

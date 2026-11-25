@@ -16,7 +16,7 @@ Nhóm: LuckyTeam · Lớp: L3B
 
 **Đề xuất:** **Go có điều kiện** cho kế hoạch pilot phạm vi `noi_dia` và `hang_nang` (loại `quoc_te` 1,88× và `doi_tac` 0,85×), giới hạn tối đa **2 lần chạy**.
 
-- **Điều kiện 1 (An toàn hệ thống):** Bổ sung khoá chống trùng lệnh hoàn tiền và cơ chế đối soát sổ cái hằng giờ (khắc phục lỗi ca 7 và ca 20) trước khi mở pilot. — *Người phụ trách:* Kỹ sư trưởng agent · *Ngày kiểm tra:* trước ngày bắt đầu pilot.
+- **Điều kiện 1 (An toàn hệ thống):** Bổ sung khoá chống trùng lệnh hoàn tiền, khoá đơn nghiệp vụ (`order_id`) vào `refund_request_created` & `refund_ledger_write`, và cơ chế đối soát sổ cái hằng giờ (khắc phục lỗi ca 7 và ca 20) trước khi mở pilot. — *Người phụ trách:* Kỹ sư trưởng agent · *Ngày kiểm tra:* trước ngày bắt đầu pilot.
 - **Điều kiện 2 (Thiết kế thống kê):** Giám đốc vận hành ký chấp nhận **MDE 6 điểm** cho phương án chia theo staff 20 + 20 (tối đa 1.000 < 1.251 hiệu dụng nên không đạt 5 điểm), biết rằng **power chỉ còn 0,64** nếu tác động thật là 5 điểm (`pilot_plan.yaml`). — *Người phụ trách:* Giám đốc vận hành LogiX-VN · *Ngày kiểm tra:* trước ngày bắt đầu pilot.
 - **Điều kiện 3 (Đo lường thực tế):** Bật đủ 10 event có `trace_id` trong `chi_so.md` và thay hai cột phút `simulated` bằng thời gian xem lại, làm lại đo thật (`phut_xem_lai_thuc`, `phut_lam_lai_thuc`). — *Người phụ trách:* PM trợ lý hoàn phí · *Ngày kiểm tra:* cuối tuần 1 pilot.
 - **Điều kiện 4 (Kiểm soát chi phí xem lại — xử lý rủi ro B4):** Có lộ trình hạ tỉ lệ xem lại theo bậc khi tỉ lệ sửa + bỏ < 15% và đưa thời gian xem lại ≤ 4,8 phút/ca (tránh mức 11.743–12.415 đ nếu giữ xem lại 100%). — *Người phụ trách:* Trưởng nhóm CSKH · *Ngày kiểm tra:* cuối bước rollout 0.25.

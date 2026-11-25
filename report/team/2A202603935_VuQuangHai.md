@@ -16,14 +16,14 @@
 
 ## 3. Đóng góp cụ thể
 
-- **Gắn nhãn độc lập 20 ca lỗi:** phân loại toàn bộ 20 ca theo nguyên nhân gốc (4 Do người dùng, 5 Hệ thống, 4 Ngữ cảnh, 4 Giới hạn hệ thống, 3 Ngầm) và gửi cho Người 3 đối chiếu.
+- **Gắn nhãn độc lập 20 ca lỗi:** phân loại toàn bộ 20 ca theo nguyên nhân gốc (4 Do người dùng, 5 Hệ thống, 4 Ngữ cảnh, 4 Giới hạn hệ thống, 3 Ngầm) và đối chiếu với Người 3 đạt đồng thuận **18/20 = 90%** (ca 12 thống nhất Ngầm, ca 13 thống nhất Giới hạn hệ thống trong [bang_loi.md](bang_loi.md)).
 - **Viết `src/cp5_chi_so.py`:** thiết kế hàm `tinh_chi_so_e1(reqs)` và `chay_chi_so(reqs)` tách thành module riêng để Người 1 import trực tiếp vào `src/lab13.py` mà không xung đột merge; đọc `logix_requests.csv` với `keep_default_na=False`.
 - **Hoàn thiện E1 và 10 event trong `report/team/chi_so.md`:** tính đủ 3 chỉ số trên 1.200 yêu cầu và tham chiếu trên phạm vi pilot (`noi_dia` + `hang_nang`); đề xuất thêm *Tỉ lệ tiếp nhận sử dụng trợ lý* (dùng) và *Tỉ lệ đơn hoàn sai tiền hoặc hoàn trùng qua kiểm tra mẫu hằng tuần* (an toàn); thiết kế 10 event có `trace_id` đo được 100% các chỉ số E1 và thay hai cột phút `simulated` bằng dữ liệu đo thật sau tuần 1.
-- **Tổng hợp hồ sơ và báo cáo nhóm:** dựng và cập nhật [ho_so_launch_v0.md](ho_so_launch_v0.md) (điền số A, B, E1, E2 kèm nhãn `simulated` và con số bất lợi B4), [TEAM.md](../../TEAM.md) và [group_report.md](group_report.md).
+- **Tổng hợp hồ sơ và báo cáo nhóm:** dựng và hoàn thiện [ho_so_launch_v0.md](ho_so_launch_v0.md) đủ 7 mục (số liệu A–E, nhãn `simulated`, con số bất lợi B4 và đánh đổi MDE 6 điểm / power 0,64, đề xuất **Go có điều kiện**), cập nhật [TEAM.md](../../TEAM.md) và [group_report.md](group_report.md).
 
 ## 4. Bằng chứng
 
-- Nhánh `haivq`, commit `ffdcd4e` ("feat(p4): complete Person 4 E1 metrics, events, and launch dossier draft") và merge `ad5178f` vào `main`.
+- Nhánh `haivq`, commit `ffdcd4e` ("feat(p4): complete Person 4 E1 metrics, events, and launch dossier draft"), merge `ad5178f` vào `main`, và commit `90ed31d` ("docs(p4): fill A/B/E2 metrics in dossier and add Vu Quang Hai personal report").
 - File: [src/cp5_chi_so.py](../../src/cp5_chi_so.py), [report/team/chi_so.md](chi_so.md) (E1 và 10 event), [report/team/ho_so_launch_v0.md](ho_so_launch_v0.md), [TEAM.md](../../TEAM.md), [report/team/group_report.md](group_report.md).
 - Lệnh `cd src && python cp5_chi_so.py` và `cd src && python lab13.py` chạy không lỗi, in đầy đủ các chỉ số E1 khớp số đối chiếu:
 
@@ -43,9 +43,9 @@
 
 ## 6. Tự đánh giá
 
-- **Làm được:** hoàn thành đúng tiến độ và đúng ranh giới file của Người 4, giúp nhóm merge `haivq`, `p1-A`, `p2-B` vào `main` không xung đột; hồ sơ Gate 2a nêu rõ cả con số bất lợi (B4 xem lại 100% lên 0,98×–1,03×) và điều kiện xử lý cụ thể.
+- **Làm được:** hoàn thành đúng tiến độ và đúng ranh giới file của Người 4, giúp nhóm merge `haivq`, `p1-A`, `p2-B`, `p3-CD` vào `main` không xung đột; hồ sơ Gate 2a đủ 7 mục, nêu rõ cả con số bất lợi (B4 xem lại 100% lên 0,98×–1,03×; power 0,64 ở mức 5 điểm) và 4 điều kiện xử lý cụ thể.
 - **Điều rút ra:**
-  - Nếu một chỉ số không ánh xạ được về các event có `trace_id` thì chưa thể đo trong thực tế pilot.
+  - Nếu một chỉ số không ánh xạ được về các event có `trace_id` thì chưa thể đo trong thực tế pilot; đồng thời cần khoá đơn nghiệp vụ chung (`order_id`) để bắt hoàn trùng khi phát sinh nhiều `request_id`.
   - Đợt chạy thử không có nhóm đối chứng nên chỉ được báo cáo "chỉ số trong đợt chạy thử là 82,83%", không được quy nhân quả cho trợ lý.
-  - Phân loại lỗi phải bám nguyên nhân gốc (ví dụ lỗi ngầm như sai giá trong cache không tạo ticket mở lại nên cần kiểm tra mẫu định kỳ).
-- **Cần hoàn thiện tiếp:** sau khi Người 3 merge `p3-CD`, cập nhật nốt Mục 5 (bảng lỗi) và Mục 6 (pilot plan) vào `ho_so_launch_v0.md`, chốt đề xuất cuối trước duyệt chéo Gate 2a.
+  - Phân loại lỗi phải bám nguyên nhân gốc (ví dụ lỗi ngầm như sai giá trong cache hay tốn token gấp 3 lần ở ca 12 không tạo ticket mở lại nên cần kiểm tra mẫu và giám sát chi phí định kỳ).
+- **Cần hoàn thiện tiếp:** tham gia bảo vệ hồ sơ nhóm cùng Người 3 ở phiên duyệt chéo Gate 2a, sau đó điền kết quả duyệt chéo vào `report/team/group_report.md` và cập nhật commit chốt trong `TEAM.md` trước khi nộp LMS.
