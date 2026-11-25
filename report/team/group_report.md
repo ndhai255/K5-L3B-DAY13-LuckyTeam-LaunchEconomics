@@ -30,7 +30,7 @@ Nhóm phân công 4 thành viên làm song song theo [PHAN_CONG.md](../../PHAN_C
   - Chỉ số chính (% đóng trong 24 giờ và không mở lại trong 7 ngày): **82,83%** (994/1.200); trong phạm vi `noi_dia` + `hang_nang`: **92,26%** (906/982).
   - Chỉ số dùng (tỉ lệ bỏ qua gợi ý): **27,12%** (48/177); trong phạm vi pilot: **21,09%** (27/128).
   - Chỉ số an toàn (tỉ lệ lỗi lọt đến khách — mở lại 7 ngày): **4,25%** (51/1.200); trong phạm vi pilot: **3,97%** (39/982).
-- **Bảng lỗi và pilot plan (C–D):** [Điền sau khi merge `p3-CD`].
+- **Bảng lỗi và pilot plan (C–D, `p3-CD` chờ merge):** Hai bộ nhãn độc lập trùng **18/20 = 90%**; ca 12 thống nhất **Ngầm**, ca 13 **Giới hạn hệ thống**, kèm bảng khắc phục đủ năm loại. Pilot chỉ gồm `noi_dia` + `hang_nang`, random theo staff 20 can thiệp/20 đối chứng; chấp nhận MDE 6 điểm, cần **5.980** yêu cầu thô tương đương **859** mẫu hiệu dụng mỗi nhánh (DE 6,96). Rollout 10% → 25% → 50%, quyết định đề xuất T+37, có ba stop rule và rollback.
 - **Đề xuất Gate 2a:** **Go có điều kiện** cho pilot `noi_dia` + `hang_nang` (chi tiết 4 điều kiện, người phụ trách và ngày kiểm tra tại [ho_so_launch_v0.md](ho_so_launch_v0.md)).
 - **Kết quả duyệt chéo hội đồng:** [Điền sau phiên duyệt chéo Gate 2a].
 

@@ -13,7 +13,7 @@
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Nguyễn Đức Hải | 2A202603943 | ndhai255.work@gmail.com | ndhai255 | Người viết code (trước giải lao) — Nhiệm vụ A |
 |   2 | Nguyễn Anh Quân | 2A202603950 | anhhquan511@gmail.com | anhhquan511 | Người kiểm số — Nhiệm vụ B & E2 |
-|   3 | [Điền họ tên] | [Điền MSSV] | [Điền email] | [Điền GitHub] | Người gắn nhãn 1, viết code sau giải lao — Nhiệm vụ C & D |
+|   3 | Tăng Nguyễn Hải Đăng | 2A202603916 | 26ai.dangtnh@vinuni.edu.vn | haidangwork1411 | Người gắn nhãn 1, viết code sau giải lao — Nhiệm vụ C & D |
 |   4 | Vũ Quang Hải | 2A202603935 | haivq25@gmail.com | HaiVuQ | Người gắn nhãn 2 kiêm giữ hồ sơ — Nhiệm vụ C (nhãn 2), E1, event & hồ sơ |
 
 Bốn vai của lab:
@@ -79,19 +79,25 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - `cd src && python cp2_do_nhay.py` đối chiếu khớp 100% với `lab13.mo_hinh` và qua toàn bộ kiểm tra tuyến tính B1–B2.
 - Báo cáo cá nhân: [report/team/2A202603950_NguyenAnhQuan.md](report/team/2A202603950_NguyenAnhQuan.md).
 
-## [Nguoi3-HoVaTen-MSSV]
+## TangNguyenHaiDang-2A202603916
 
 ### Phần việc phụ trách
 
-- Người gắn nhãn 1 (20 ca độc lập, tổng hợp `report/team/bang_loi.md`); Nhiệm vụ D (`src/cp4_co_mau.py`, `report/team/pilot_plan.yaml`).
+- Người gắn nhãn 1: gắn nhãn độc lập 20 ca CP3, đối chiếu với Người 4 và tổng hợp `report/team/bang_loi.md`.
+- Phụ trách Nhiệm vụ D: `src/cp4_co_mau.py` và `report/team/pilot_plan.yaml`.
 
 ### Đóng góp cụ thể
 
-- [Cập nhật sau khi hoàn thành nhánh `p3-CD`]
+- CP3: hai bộ nhãn độc lập trùng 18/20 = 90%; nhãn thống nhất ca 12 là Ngầm, ca 13 là Giới hạn hệ thống; bảng khắc phục có 5 ca đủ 5 loại Google PAIR.
+- CP4: D1 a=1.251; b=3.103 với DE=2,48; c=1.000; d=300; e=5.980 yêu cầu thô/nhánh, tương đương 859 mẫu hiệu dụng/nhánh với 20 staff, tối thiểu 299 yêu cầu/staff và DE=6,96.
+- Pilot scope `noi_dia` + `hang_nang`; baseline mở lại toàn mẫu 51/1.200 = 4,25%, scope pilot 39/982 = 3,97%; rollout 10% → 25% → 50%, mốc quyết định đề xuất T+37.
 
 ### Bằng chứng
 
-- [Link commit / output `src/cp4_co_mau.py` & `yaml.safe_load`]
+- File: `src/cp4_co_mau.py`, `report/team/pilot_plan.yaml`, `report/team/bang_loi.md`.
+- `cd src && python cp4_co_mau.py` in đủ D1 và baseline; `yaml.safe_load` đọc được `pilot_plan.yaml`.
+- Báo cáo cá nhân: [report/team/2A202603916_TangNguyenHaiDang.md](report/team/2A202603916_TangNguyenHaiDang.md).
+- Các file đang ở nhánh `p3-CD`, chờ merge và tích hợp CP4 vào `src/lab13.py`; không nêu commit khi chưa commit.
 
 ## VuQuangHai-2A202603935
 
