@@ -12,7 +12,7 @@
 | STT | Họ tên | MSSV | Email | GitHub | Vai trò |
 | --: | ------ | ---- | ----- | ------ | ------- |
 |   1 | Nguyễn Đức Hải | 2A202603943 | ndhai255.work@gmail.com | ndhai255 | Người viết code (trước giải lao) — Nhiệm vụ A |
-|   2 | [Điền họ tên] | [Điền MSSV] | [Điền email] | [Điền GitHub] | Người kiểm số — Nhiệm vụ B & E2 |
+|   2 | Nguyễn Anh Quân | 2A202603950 | anhhquan511@gmail.com | anhhquan511 | Người kiểm số — Nhiệm vụ B & E2 |
 |   3 | [Điền họ tên] | [Điền MSSV] | [Điền email] | [Điền GitHub] | Người gắn nhãn 1, viết code sau giải lao — Nhiệm vụ C & D |
 |   4 | Vũ Quang Hải | 2A202603935 | haivq25@gmail.com | HaiVuQ | Người gắn nhãn 2 kiêm giữ hồ sơ — Nhiệm vụ C (nhãn 2), E1, event & hồ sơ |
 
@@ -56,19 +56,28 @@ Ví dụ: `report/team/20241234_NguyenVanAn.md`.
 - `cd src && python lab13.py` in `Ba phép thử đáp án biết trước: ĐẠT` và các bảng A2, A3, A4.
 - Báo cáo cá nhân: [report/team/2A202603943_NguyenDucHai.md](report/team/2A202603943_NguyenDucHai.md).
 
-## [Nguoi2-HoVaTen-MSSV]
+## NguyenAnhQuan-2A202603950
 
 ### Phần việc phụ trách
 
-- Kiểm số độc lập A1–A2; Nhiệm vụ B (B1–B4) trong `src/cp2_do_nhay.py`, `report/team/bang_chi_phi.md` và Nhiệm vụ E2 trong `report/team/chi_so.md`.
+- Người kiểm số (Người 2 trong `PHAN_CONG.md`): tính tay độc lập A1–A2 bằng pandas để đối chiếu với Người 1.
+- CP2 · Nhiệm vụ B (B1–B4): viết module `src/cp2_do_nhay.py` (nhận `mo_hinh` làm tham số) và điền mục B1–B4 trong `report/team/bang_chi_phi.md`.
+- CP5 · Nhiệm vụ E2: xây dựng bảng rủi ro kinh tế lấy số từ bảng độ nhạy trong `report/team/chi_so.md`.
+- Duyệt chéo Gate 2a cùng Người 1, chấm hồ sơ nhóm bạn vào `report/team/phieu_cham.md`.
 
 ### Đóng góp cụ thể
 
-- [Cập nhật sau khi hoàn thành nhánh `p2-B`]
+- Kiểm số độc lập A1 (`1,20 · 1,25 · 1,25`) và A2 (`4.373.585 đ`, `978` việc thành công, CPS `4.472 đ` [`simulated`], gấp `16,3×` hoá đơn/yêu cầu `274,7 đ`), đối chiếu khớp 100% với `lab13.mo_hinh`.
+- B1–B2: chạy 9 kịch bản độ nhạy + kịch bản cặp `Token ×2 + Xem lại ×2` (`6.543 đ`, `+46,3%`, `simulated`), tự kiểm tra tuyến tính đạt; xếp hạng 3 yếu tố ảnh hưởng mạnh nhất: 1. Số ca làm lại (`+51,8%`) · 2. Tỉ lệ xem lại (`+40,7%`) · 3. Lương nhân viên (`+23,1%`).
+- B3: so sánh chi phí cả hệ thống theo giới hạn chạy 1/2/3 lần, chỉ ra giới hạn 2 lần rẻ nhất cho công ty (`6.901.220 đ`, `simulated`) khác với mức CPS thấp nhất ở 1 lần (`4.111 đ`, đẩy thêm 85 ca sang nhân viên).
+- B4 & E2: tính kịch bản xem lại 100% phạm vi `noi_dia` + `hang_nang` (`11.743 đ = 0,98×` với 9 phút làm lại và `12.415 đ = 1,03×` với trung bình thực tế 15,3 phút từ `phut_lam_lai_simulated`, mức hoà vốn `4,8–5,1 phút/ca`) và điền 3 dòng rủi ro kinh tế có vai phụ trách cụ thể vào `report/team/chi_so.md`.
 
 ### Bằng chứng
 
-- [Link commit / output `src/cp2_do_nhay.py`]
+- Nhánh `p2-B`, commit `2599b35` (đã merge vào `main` tại `994a3ff` và nối vào `src/lab13.py` tại `3918943`).
+- File: `src/cp2_do_nhay.py`, `report/team/bang_chi_phi.md` (mục B1–B4), `report/team/chi_so.md` (mục E2).
+- `cd src && python cp2_do_nhay.py` đối chiếu khớp 100% với `lab13.mo_hinh` và qua toàn bộ kiểm tra tuyến tính B1–B2.
+- Báo cáo cá nhân: [report/team/2A202603950_NguyenAnhQuan.md](report/team/2A202603950_NguyenAnhQuan.md).
 
 ## [Nguoi3-HoVaTen-MSSV]
 
